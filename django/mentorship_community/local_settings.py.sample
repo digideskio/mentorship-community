@@ -1,0 +1,2 @@
+STATIC_ROOT = '/Users/USERNAME/Projects/mentorship-community/project_assets/static'  # NOQA
+MEDIA_ROOT = '/Users/USERNAME/Projects/mentorship-community/project_assets/media'  # NOQA
