@@ -10,6 +10,7 @@ export default class AppContainer extends React.Component {
       <div className="container">
         <Navbar />
         {this.props.children}
+        <div style={{height: "100px"}} />
       </div>
     )
   }

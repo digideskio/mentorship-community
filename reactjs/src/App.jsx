@@ -2,24 +2,50 @@ import React from "react"
 import { render } from "react-dom"
 import { browserHistory, IndexRoute, Router, Route } from "react-router"
 
+import {
+  createStore,
+  compose,
+  applyMiddleware,
+  combineReducers,
+} from "redux"
+import { Provider } from "react-redux"
+import thunk from "redux-thunk"
+import { createHistory } from 'history'
+
+import * as reducers from "./reducers"
 import AppContainer from "./containers/AppContainer"
-import CareerDetailView from "./containers/CareerDetailView"
-import CareerListView from "./containers/CareerListView"
+import SkillDetailView from "./containers/SkillDetailView"
+import SkillListView from "./containers/SkillListView"
 import IndexView from "./containers/IndexView"
 import LoginView from "./containers/LoginView"
 import NoMatchView from "./containers/NoMatchView"
 import SignupView from "./containers/SignupView"
 
+let finalCreateStore
+if (process.env.NODE_ENV === 'production') {
+  finalCreateStore = compose(applyMiddleware(thunk))(createStore)
+} else {
+  finalCreateStore = compose(
+    applyMiddleware(thunk),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  )(createStore)
+}
+
+let reducer = combineReducers(reducers)
+let store = finalCreateStore(reducer)
+
 
 render((
-  <Router history={browserHistory}>
-    <Route path="/" component={AppContainer}>
-      <IndexRoute component={IndexView} />
-      <Route path="careers" component={CareerListView} />
-      <Route path="careers/:slug" component={CareerDetailView} />
-      <Route path="login" component={LoginView} />
-      <Route path="signup" component={SignupView} />
-      <Route path="*" component={NoMatchView} />
-    </Route>
-  </Router>
+  <Provider store={store}>
+    <Router history={browserHistory}>
+      <Route path="/" component={AppContainer}>
+        <IndexRoute component={IndexView} />
+        <Route path="skills" component={SkillListView} />
+        <Route path="skills/:slug" component={SkillDetailView} />
+        <Route path="login" component={LoginView} />
+        <Route path="signup" component={SignupView} />
+        <Route path="*" component={NoMatchView} />
+      </Route>
+    </Router>
+  </Provider>
 ), document.getElementById('App'))

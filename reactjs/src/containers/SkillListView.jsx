@@ -1,11 +1,11 @@
 import React from "react"
 
 
-export default class CareerListView extends React.Component {
+export default class SkillListView extends React.Component {
   render() {
     return (
       <div>
-        Career List View
+        Skill List View
         {this.props.children}
       </div>
     )
