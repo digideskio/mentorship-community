@@ -1,12 +1,10 @@
 import React from "react"
-
+import Radium from "radium"
 
 export default class InputCheckbox extends React.Component {
   render() {
     return (
-      <div>
-        <input type="checkbox" />
-      </div>
+      <input type="checkbox" />
     )
   }
 }

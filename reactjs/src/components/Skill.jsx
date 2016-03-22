@@ -11,9 +11,13 @@ export default class Skill extends React.Component {
 
   render() {
     let { isSmall, skill } = this.props
+    let panelType = "default"
+    if (skill.modules_left === 0) {
+      panelType = "success"
+    }
     return (
       <Link to={`/skills/${skill.slug}`}>
-        <Panel heading={skill.title}>
+        <Panel heading={skill.title} type={panelType}>
           {isSmall === undefined &&
             <div>
               <p>Number of Modules: {skill.total_modules}</p>
@@ -23,7 +27,7 @@ export default class Skill extends React.Component {
             </div>
           }
           {isSmall &&
-            <p>Modules: {skill.total_modules}</p>
+            <p>Modules left: {skill.modules_left}</p>
           }
         </Panel>
       </Link>

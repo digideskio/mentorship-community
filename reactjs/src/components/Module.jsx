@@ -17,7 +17,7 @@ export default class Module extends React.Component {
         <p></p>
         <div className="row">
           <div className="col-sm-6">
-            <div>I'm a Mentor</div>
+            <div>I can mentor</div>
           </div>
           <div className="col-sm-6">
             <InputCheckbox />
@@ -33,7 +33,7 @@ export default class Module extends React.Component {
         </div>
         <div className="row">
           <div className="col-sm-6">
-            <div>I need a Mentor</div>
+            <div>I need a mentor</div>
           </div>
           <div className="col-sm-6">
             <InputCheckbox />

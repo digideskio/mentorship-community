@@ -29,14 +29,18 @@ export default class SkillDetailView extends React.Component {
         <Jumbotron>
           <h1>I want to learn {skill.title}</h1>
         </Jumbotron>
-        <h2>Prerequisites</h2>
-        <div className="row">
-          {skill.prerequisites.map((id, index) =>
-            <div className="col-sm-2" key={id}>
-              <Skill skill={this.getSkillById(id)} isSmall={true} />
+        {skill.prerequisites.length > 0 &&
+          <div>
+            <h2>Prerequisites</h2>
+            <div className="row">
+              {skill.prerequisites.map((id, index) =>
+                <div className="col-sm-2" key={id}>
+                  <Skill skill={this.getSkillById(id)} isSmall={true} />
+                </div>
+              )}
             </div>
-          )}
-        </div>
+          </div>
+        }
         <h2>Modules</h2>
 
         <div className="row">
