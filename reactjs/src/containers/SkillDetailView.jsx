@@ -7,19 +7,19 @@ import Module from "../components/Module"
 
 
 @connect(state => ({
-  skills: state.skills.skills
+  skills: state.skills.skills,
+  modules: state.skills.modules,
 }))
 export default class SkillDetailView extends React.Component {
-  getSkillById(id) {
-    let { skills } = this.props
-    let skill = skills.find((item) => {
+  getItemById(items, id) {
+    let result = items.find((item) => {
       return item.id === id
     })
-    return skill
+    return result
   }
 
   render() {
-    let { params, skills } = this.props
+    let { modules, params, skills } = this.props
     let { slug } = params
     let skill = skills.find((item) => {
       return item.slug === slug
@@ -35,7 +35,7 @@ export default class SkillDetailView extends React.Component {
             <div className="row">
               {skill.prerequisites.map((id, index) =>
                 <div className="col-sm-2" key={id}>
-                  <Skill skill={this.getSkillById(id)} isSmall={true} />
+                  <Skill skill={this.getItemById(skills, id)} isSmall={true} />
                 </div>
               )}
             </div>
@@ -44,26 +44,11 @@ export default class SkillDetailView extends React.Component {
         <h2>Modules</h2>
 
         <div className="row">
-          <div className="col-sm-3">
-            <Module heading="Installation" />
-          </div>
-          <div className="col-sm-3">
-            <Module heading="Models" />
-          </div>
-          <div className="col-sm-3">
-            <Module heading="Views" />
-          </div>
-          <div className="col-sm-3">
-            <Module heading="Forms" />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-sm-3">
-            <Module heading="Templates" />
-          </div>
-          <div className="col-sm-3">
-            <Module heading="And Many More..." />
-          </div>
+          {skill.modules.map((id, index) =>
+            <div className="col-sm-3" key={id}>
+              <Module module={this.getItemById(modules, id)} />
+            </div>
+          )}
         </div>
       </div>
     )

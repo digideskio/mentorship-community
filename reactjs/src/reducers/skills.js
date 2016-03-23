@@ -10,6 +10,7 @@ const initialState = {
       mentees: 78,
       alumni: 12,
       prerequisites: [4, 5, 6, ],
+      modules: [1, 2, 3, 4, 5, 6, ]
     },
     {
       id: 2,
@@ -21,6 +22,7 @@ const initialState = {
       mentees: 210,
       alumni: 50,
       prerequisites: [4, 5, 6, ],
+      modules: [1, 2, 3, 4, 5, 6, ]
     },
     {
       id: 3,
@@ -32,6 +34,7 @@ const initialState = {
       mentees: 500,
       alumni: 80,
       prerequisites: [4, 5, 6, ],
+      modules: [1, 2, 3, 4, 5, 6, ]
     },
     {
       id: 4,
@@ -43,6 +46,7 @@ const initialState = {
       mentees: 1500,
       alumni: 180,
       prerequisites: [],
+      modules: [1, 2, 3, 4, 5, 6, ]
     },
     {
       id: 5,
@@ -54,6 +58,7 @@ const initialState = {
       mentees: 250,
       alumni: 2,
       prerequisites: [],
+      modules: [1, 2, 3, 4, 5, 6, ]
     },
     {
       id: 6,
@@ -65,7 +70,40 @@ const initialState = {
       mentees: 25000,
       alumni: 500,
       prerequisites: [],
+      modules: [1, 2, 3, 4, 5, 6, ]
     }
+  ],
+  modules: [
+    {
+      id: 1,
+      title: "Install Django",
+      slug: "install-django",
+    },
+    {
+      id: 2,
+      title: "Models",
+      slug: "models",
+    },
+      {
+      id: 3,
+      title: "Views",
+      slug: "views",
+    },
+    {
+      id: 4,
+      title: "Forms",
+      slug: "forms",
+    },
+    {
+      id: 5,
+      title: "Templates",
+      slug: "templates",
+    },
+    {
+      id: 6,
+      title: "And Many More...",
+      slug: "and-many-more",
+    },
   ]
 }
 

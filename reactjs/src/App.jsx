@@ -20,6 +20,7 @@ import IndexView from "./containers/IndexView"
 import LoginView from "./containers/LoginView"
 import NoMatchView from "./containers/NoMatchView"
 import SignupView from "./containers/SignupView"
+import ModuleDetailView from "./containers/ModuleDetailView"
 
 let finalCreateStore
 if (process.env.NODE_ENV === 'production') {
@@ -42,6 +43,7 @@ render((
         <IndexRoute component={IndexView} />
         <Route path="skills" component={SkillListView} />
         <Route path="skills/:slug" component={SkillDetailView} />
+        <Route path="modules/:slug" component={ModuleDetailView} />
         <Route path="login" component={LoginView} />
         <Route path="signup" component={SignupView} />
         <Route path="*" component={NoMatchView} />
