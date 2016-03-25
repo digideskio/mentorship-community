@@ -4,20 +4,12 @@ import { connect } from "react-redux"
 import Jumbotron from "../components/Jumbotron"
 
 
-@connect(state => ({
-  modules: state.skills.modules
-}))
 export default class ModuleDetailView extends React.Component {
   render() {
-    let { modules, params } = this.props
-    let { slug } = params
-    let mod = modules.find((item) => {
-      return item.slug == slug
-    })
     return (
       <div>
         <Jumbotron>
-          <h1>Let's do this: {mod.title}</h1>
+          <h1>Let's do this: [MODULE NAME]</h1>
         </Jumbotron>
         <h2>Description</h2>
         <p>Here we will describe what is the goal of this module</p>

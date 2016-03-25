@@ -5,29 +5,23 @@ import Panel from "./Panel"
 
 
 export default class Skill extends React.Component {
-  static propTypes = {
-    skill: React.PropTypes.object.isRequired,
-  }
-
   render() {
-    let { isSmall, skill } = this.props
-    let panelType = "default"
-    if (skill.modules_left === 0) {
-      panelType = "success"
-    }
+    let { isSmall, title } = this.props
     return (
-      <Link to={`/skills/${skill.slug}`}>
-        <Panel heading={skill.title} type={panelType}>
-          {isSmall === undefined &&
+      <Link to={`/skills/skill-name`}>
+        <Panel heading={title}>
+          {!isSmall &&
             <div>
-              <p>Number of Modules: {skill.total_modules}</p>
-              <p>Mentors: {skill.mentors}</p>
-              <p>Mentees: {skill.mentees}</p>
-              <p>Alumni: {skill.alumni}</p>
+              <p>Number of Modules: 123</p>
+              <p>Mentors: 2</p>
+              <p>Mentees: 20</p>
+              <p>Alumni: 10</p>
             </div>
           }
           {isSmall &&
-            <p>Modules left: {skill.modules_left}</p>
+            <div>
+              <p>Modules left: 12</p>
+            </div>
           }
         </Panel>
       </Link>

@@ -6,14 +6,10 @@ import Panel from "./Panel"
 
 
 export default class Module extends React.Component {
-  static propTypes = {
-    module: React.PropTypes.object.isRequired,
-  }
-
   render() {
-    let { module } = this.props
+    let { title } = this.props
     return (
-      <Panel heading={module.title} linkTo={`/modules/${module.slug}`}>
+      <Panel heading={title} linkTo={`/modules/module-slug`}>
         <div className="row">
           <div className="col-sm-6">
             <div>I can mentor</div>
