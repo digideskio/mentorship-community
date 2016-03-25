@@ -3,27 +3,31 @@ import Radium from "radium"
 
 const styles = {
   base: {
-    backgroundColor: "#EFEFEF",
+    backgroundColor: "#DFDFDF",
     borderRadius: "50px",
     display: "inline-block",
-    height: "50px",
     marginRight: "0.5em",
-    width: "50px",
   },
   flex: {
     alignItems: "center",
     display: "flex",
+    fontSize: "8pt",
+    height: "100%",
     justifyContent: "center",
     width: "100%",
-    height: "100%",
   },
 }
 
 @Radium
 export default class Avatar extends React.Component {
   render () {
+    let { size } = this.props
+    if (!size) { size = "50px" }
     return (
-      <div style={[styles.base, ]}>
+      <div style={[
+        styles.base,
+        {width: size, height: size},
+      ]}>
         <div style={[styles.flex]}>
           :)
         </div>

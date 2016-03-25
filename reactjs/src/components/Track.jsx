@@ -80,24 +80,13 @@ export default class Track extends React.Component {
   renderTrack() {
     return (
       <div className="row">
-        <div className="col-sm-3">
-          <Module title="Installation" />
-        </div>
-        <div className="col-sm-3">
-          <Module title="Hello World" />
-        </div>
-        <div className="col-sm-3">
-          <Module title="Template Basics" />
-        </div>
-        <div className="col-sm-3">
-          <Module title="URLs" />
-        </div>
+        {this.props.children}
       </div>
     )
   }
 
   render() {
-    let { title } = this.props
+    let { title, type } = this.props
     let { show } = this.state
     let panelHeadingRight = this.renderPanelOptions()
     let nodes
@@ -105,7 +94,7 @@ export default class Track extends React.Component {
     if (show === "options") { nodes = this.renderOptions() }
     if (show === "info") { nodes = this.renderInfo() }
     return (
-      <Panel heading={title} headingRight={panelHeadingRight}>
+      <Panel heading={title} headingRight={panelHeadingRight} type={type}>
         {nodes}
       </Panel>
     )
