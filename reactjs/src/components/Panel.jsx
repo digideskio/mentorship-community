@@ -5,16 +5,30 @@ import { Link } from "react-router"
 export default class Panel extends React.Component {
   static propTypes = {
     heading: React.PropTypes.string,
+    headingRight: React.PropTypes.object,
     linkTo: React.PropTypes.string,
     type: React.PropTypes.string,
   }
 
   render() {
-    let { heading, linkTo, type } = this.props
+    let { heading, headingRight, linkTo, type } = this.props
     if (!type) { type = "default" }
-    let titleNode = (
+    let headingNode = (
       <h1 className="panel-title">{heading}</h1>
     )
+    let titleNode = headingNode
+    if (headingRight) {
+      titleNode = (
+        <div className="row">
+          <div className="col-sm-6">
+            {headingNode}
+          </div>
+          <div className="col-sm-6 text-right">
+            {headingRight}
+          </div>
+        </div>
+      )
+    }
     return (
       <div className={`panel panel-${type}`}>
         {heading &&

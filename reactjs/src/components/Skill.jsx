@@ -6,10 +6,14 @@ import Panel from "./Panel"
 
 export default class Skill extends React.Component {
   render() {
-    let { isSmall, title } = this.props
+    let { isSmall, modulesLeft, title } = this.props
+    let panelType = "default"
+    if (modulesLeft === 0) {
+        panelType = "success"
+    }
     return (
       <Link to={`/skills/skill-name`}>
-        <Panel heading={title}>
+        <Panel heading={title} type={panelType}>
           {!isSmall &&
             <div>
               <p>Number of Modules: 123</p>
@@ -20,7 +24,7 @@ export default class Skill extends React.Component {
           }
           {isSmall &&
             <div>
-              <p>Modules left: 12</p>
+              <p>Modules left: {modulesLeft}</p>
             </div>
           }
         </Panel>
