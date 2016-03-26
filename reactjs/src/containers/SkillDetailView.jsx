@@ -23,11 +23,13 @@ export default class SkillDetailView extends React.Component {
         </Jumbotron>
         <div className="row">
           <div className="col-sm-6">
-            <h2>Description</h2>
-            <p>
-              Here comes a text that describes what you can achieve with this skill,
-              how difficult it is to learn and how much time it might take you.
-            </p>
+            <div className="well">
+              <h2>Description</h2>
+              <p>
+                Here comes a text that describes what you can achieve with this skill,
+                how difficult it is to learn and how much time it might take you.
+              </p>
+            </div>
           </div>
           <div className="col-sm-6">
             <div className="well">
