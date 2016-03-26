@@ -11,14 +11,14 @@ export default class Module extends React.Component {
     let { currentLearners, title, type } = this.props
     let learners = []
     for (let i=0; i < currentLearners; i++) {
-      learners.push(1)
+      learners.push(i)
     }
     return (
       <Panel heading={title} linkTo={`/modules/module-slug`} type={type}>
         {currentLearners &&
           <div>
             {learners.map((i) =>
-              <Avatar size="20px" />
+              <Avatar size="20px" key={i} />
             )}
           </div>
         }

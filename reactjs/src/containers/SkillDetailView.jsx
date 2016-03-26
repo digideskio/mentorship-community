@@ -80,6 +80,12 @@ export default class SkillDetailView extends React.Component {
           have reached the end of a track, we will do a meetup and talk about
           it.
         </p>
+        <p>
+          Things marked in <span className="text-success"><b> green </b></span>
+          have been completed by you, those marked in
+          <span className="text-info"><b> blue </b></span> are the ones you are
+          currently working on.
+        </p>
         <Track title="Track #1" type="info">
           <div className="col-sm-3">
             <Module title="Installation" type="success" currentLearners={2} />

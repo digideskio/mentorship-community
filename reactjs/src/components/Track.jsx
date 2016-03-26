@@ -1,8 +1,11 @@
 import React from "react"
 
 import Avatar from "./Avatar"
+import Button from "./Button"
+import Calendar from "./Calendar"
 import Module from "./Module"
 import Panel from "./Panel"
+import InputText from "./InputText"
 
 
 export default class Track extends React.Component {
@@ -15,23 +18,33 @@ export default class Track extends React.Component {
     this.setState({show: type})
   }
 
-  renderPanelOptions() {
+  render() {
+    let { title, type } = this.props
+    let { show } = this.state
+    let panelHeadingRight = this.renderPanelOptions()
+    let nodes
+    if (show === "calendar") { nodes = this.renderCalendarMentor() }
+    if (show === "info") { nodes = this.renderInfo() }
+    if (show === "options") { nodes = this.renderOptions() }
+    if (show === "track") { nodes = this.renderTrack() }
+    return (
+      <Panel heading={title} headingRight={panelHeadingRight} type={type}>
+        {nodes}
+      </Panel>
+    )
+  }
+
+  renderCalendarMentor() {
     return (
       <div>
-        <span
-          className="glyphicon glyphicon-file"
-          onClick={() => this.handleOptionsClick("track")}
-          style={{marginRight: "0.5em"}}
-        />
-        <span
-          className="glyphicon glyphicon-info-sign"
-          onClick={() => this.handleOptionsClick("info")}
-          style={{marginRight: "0.5em"}}
-        />
-        <span
-          className="glyphicon glyphicon-cog"
-          onClick={() => this.handleOptionsClick("options")}
-        />
+        <h3>Mentor Calendar</h3>
+        <form className="form-inline">
+          <InputText name="date" placeholder="Date" inline={true} />
+          <InputText name="time" placeholder="Time" inline={true} />
+          <Button>Add Date</Button>
+          <hr />
+          <Calendar />
+        </form>
       </div>
     )
   }
@@ -77,26 +90,37 @@ export default class Track extends React.Component {
     )
   }
 
+  renderPanelOptions() {
+    return (
+      <div>
+        <span
+          className="glyphicon glyphicon-file"
+          onClick={() => this.handleOptionsClick("track")}
+          style={{marginRight: "0.5em"}}
+        />
+        <span
+          className="glyphicon glyphicon-calendar"
+          onClick={() => this.handleOptionsClick("calendar")}
+          style={{marginRight: "0.5em"}}
+        />
+        <span
+          className="glyphicon glyphicon-info-sign"
+          onClick={() => this.handleOptionsClick("info")}
+          style={{marginRight: "0.5em"}}
+        />
+        <span
+          className="glyphicon glyphicon-cog"
+          onClick={() => this.handleOptionsClick("options")}
+        />
+      </div>
+    )
+  }
+
   renderTrack() {
     return (
       <div className="row">
         {this.props.children}
       </div>
-    )
-  }
-
-  render() {
-    let { title, type } = this.props
-    let { show } = this.state
-    let panelHeadingRight = this.renderPanelOptions()
-    let nodes
-    if (show === "track") { nodes = this.renderTrack() }
-    if (show === "options") { nodes = this.renderOptions() }
-    if (show === "info") { nodes = this.renderInfo() }
-    return (
-      <Panel heading={title} headingRight={panelHeadingRight} type={type}>
-        {nodes}
-      </Panel>
     )
   }
 }
