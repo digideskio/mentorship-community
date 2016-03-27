@@ -19,7 +19,7 @@ export default class SkillDetailView extends React.Component {
         <Jumbotron>
           <h1>I want to learn [SKILL NAME]</h1>
           <p style={{height: "1em"}}></p>
-          <Button>Sign me up!</Button>
+          <Button>Sign Me Up!</Button>
         </Jumbotron>
         <div className="row">
           <div className="col-sm-6">
@@ -29,6 +29,7 @@ export default class SkillDetailView extends React.Component {
                 Here comes a text that describes what you can achieve with this skill,
                 how difficult it is to learn and how much time it might take you.
               </p>
+              <Button>Sign Me Up!</Button>
             </div>
           </div>
           <div className="col-sm-6">
