@@ -3,7 +3,6 @@ import React from "react"
 import Avatar from "./Avatar"
 import Button from "./Button"
 import Calendar from "./Calendar"
-import CalendarMentee from "./CalendarMentee"
 import Module from "./Module"
 import Panel from "./Panel"
 import InputText from "./InputText"
@@ -25,7 +24,6 @@ export default class Track extends React.Component {
     let panelHeadingRight = this.renderPanelOptions()
     let nodes
     if (show === "calendar") { nodes = this.renderCalendarMentor() }
-    if (show === "calendar-mentee") { nodes = this.renderCalendarMentee() }
     if (show === "info") { nodes = this.renderInfo() }
     if (show === "options") { nodes = this.renderOptions() }
     if (show === "track") { nodes = this.renderTrack() }
@@ -33,15 +31,6 @@ export default class Track extends React.Component {
       <Panel heading={title} headingRight={panelHeadingRight} type={type}>
         {nodes}
       </Panel>
-    )
-  }
-
-  renderCalendarMentee() {
-    return (
-      <div>
-        <h3>Mentee Calendar</h3>
-        <CalendarMentee />
-      </div>
     )
   }
 
@@ -112,11 +101,6 @@ export default class Track extends React.Component {
         <span
           className="glyphicon glyphicon-calendar"
           onClick={() => this.handleOptionsClick("calendar")}
-          style={{marginRight: "0.5em"}}
-        />
-        <span
-          className="glyphicon glyphicon-calendar"
-          onClick={() => this.handleOptionsClick("calendar-mentee")}
           style={{marginRight: "0.5em"}}
         />
         <span

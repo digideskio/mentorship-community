@@ -101,6 +101,13 @@ export default class SkillDetailView extends React.Component {
           <div className="col-sm-3">
             <Module title="URLs" currentLearners={2} />
           </div>
+          <div className="col-sm-3">
+            <Module
+              title="Finish Line"
+              currentLearners={5}
+              showDateVotes={true}
+            />
+          </div>
         </Track>
 
         <Track title="Track #2">
@@ -114,7 +121,10 @@ export default class SkillDetailView extends React.Component {
             <Module title="Module3" />
           </div>
           <div className="col-sm-3">
-            <Module title="Module4" />
+            <Module
+              title="Finish Line"
+              currentLearners={3}
+            />
           </div>
         </Track>
       </div>
