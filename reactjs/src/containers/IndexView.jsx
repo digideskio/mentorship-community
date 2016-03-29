@@ -20,26 +20,22 @@ export default class IndexView extends React.Component {
             <Skill title="Django Development" />
           </div>
           <div className="col-sm-4">
-            <Skill title="Rails Development" />
+            <Skill title="Git Basics" />
           </div>
           <div className="col-sm-4">
-            <Skill title="Web-Frontend Development" />
+            <Skill title="Python Basics" />
+          </div>
+          <div className="col-sm-4">
+            <Skill title="HTML & CSS Basics" />
           </div>
         </div>
         <hr />
         <div className="row">
           <div className="col-sm-6">
             <Panel heading="Skills on the whishlist">
-              <div className="row">
-                <div className="col-sm-4">
-                  <p>Skill Name 1 (15) <span className="glyphicon glyphicon-thumbs-up"></span></p>
-                  <p>Skill Name 2 (2) <span className="glyphicon glyphicon-thumbs-up"></span></p>
-                </div>
-              </div>
-            </Panel>
-          </div>
-          <div className="col-sm-6">
-            <Panel heading="Something else?">
+              <p>Skill Name 1 (15) <span className="glyphicon glyphicon-thumbs-up"></span></p>
+              <p>Skill Name 2 (2) <span className="glyphicon glyphicon-thumbs-up"></span></p>
+              <h3>Something else?</h3>
               <InputText placeholder="Enter skill here" />
               <Button>Submit</Button>
             </Panel>
