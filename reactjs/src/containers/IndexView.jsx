@@ -13,8 +13,14 @@ export default class IndexView extends React.Component {
     return (
       <div>
         <Jumbotron>
-          <h1>What do you want to learn?</h1>
+          <h1>We help you on your journey into software development</h1>
         </Jumbotron>
+        <div className="row">
+          <div className="col-sm-offset-1 col-sm-10">
+            <div className="lead text-center">Programming is learned best while trying it at home, but self-teaching such a complex topic can be frustrating. Our goal is to structure your lessons, give you access to friendly mentors and introduce you to the broader communities.</div>
+          </div>
+        </div>
+        <hr />
         <div className="row">
           <div className="col-sm-4">
             <Skill title="Django Development" />
