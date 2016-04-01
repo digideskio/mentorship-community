@@ -1,5 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
+import { Link } from "react-router"
 
 import Avatar from "../components/Avatar"
 import Button from "../components/Button"
@@ -11,6 +12,10 @@ import Track from "../components/Track"
 
 
 export default class SkillDetailView extends React.Component {
+  handleSignupClick() {
+
+  }
+
   render() {
     let { params } = this.props
     let { slug } = params
@@ -19,7 +24,9 @@ export default class SkillDetailView extends React.Component {
         <Jumbotron>
           <h1>I want to learn [SKILL NAME]</h1>
           <p style={{height: "1em"}}></p>
-          <Button>Sign Me Up!</Button>
+          <Link to={`/skills/${slug}/signup`}>
+            <Button>Sign Me Up!</Button>
+          </Link>
         </Jumbotron>
         <div className="row">
           <div className="col-sm-6">
