@@ -16,8 +16,10 @@ import * as reducers from "./reducers"
 import AppContainer from "./containers/AppContainer"
 import IndexView from "./containers/IndexView"
 import LoginView from "./containers/LoginView"
+import MentorProfileView from "./containers/MentorProfileView"
 import ModuleDetailView from "./containers/ModuleDetailView"
 import NoMatchView from "./containers/NoMatchView"
+import ProfileView from "./containers/ProfileView"
 import SignupView from "./containers/SignupView"
 import SkillDetailView from "./containers/SkillDetailView"
 import SkillListView from "./containers/SkillListView"
@@ -46,6 +48,8 @@ render((
         <Route path="skills/:slug" component={SkillDetailView} />
         <Route path="skills/:slug/signup" component={SkillSignupView} />
         <Route path="modules/:slug" component={ModuleDetailView} />
+        <Route path="mentor-profile" component={MentorProfileView} />
+        <Route path="profile" component={ProfileView} />
         <Route path="login" component={LoginView} />
         <Route path="signup" component={SignupView} />
         <Route path="*" component={NoMatchView} />
