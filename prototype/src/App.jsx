@@ -14,6 +14,7 @@ import { createHistory } from 'history'
 
 import * as reducers from "./reducers"
 import AppContainer from "./containers/AppContainer"
+import AccountConfirmEmailView from "./containers/AccountConfirmEmailView"
 import IndexView from "./containers/IndexView"
 import LoginView from "./containers/LoginView"
 import MentorProfileView from "./containers/MentorProfileView"
@@ -44,6 +45,7 @@ render((
     <Router history={browserHistory}>
       <Route path="/" component={AppContainer}>
         <IndexRoute component={IndexView} />
+        <Route path="api/rest-auth/registration/account-confirm-email/:key" component={AccountConfirmEmailView} />
         <Route path="skills" component={SkillListView} />
         <Route path="skills/:slug" component={SkillDetailView} />
         <Route path="skills/:slug/signup" component={SkillSignupView} />
