@@ -8,7 +8,7 @@ export function response200(res, formName) {
 export const ERROR_400 = "ERROR_400"
 export function error400(json, formName) {
   return function (dispatch) {
-    dispatch({ type: ERROR_400, json: json, formName: formName})
+    dispatch({ type: ERROR_400, res: json, formName: formName})
   }
 }
 
