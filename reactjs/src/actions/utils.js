@@ -15,7 +15,6 @@ export function request(url, options, success, error400, error, failure) {
   //
   let headers = new Headers();
   headers.append("X-CSRFToken", cookie.load("csrftoken"))
-  headers.append("Content-Type", "application/json")
   headers.append("Accept", "application/json")
   options["headers"] = headers
   options["credentials"] = "include"

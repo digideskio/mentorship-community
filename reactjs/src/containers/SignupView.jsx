@@ -26,7 +26,7 @@ export default class SignupView extends React.Component {
           <Panel heading="Signup">
             <div className="row">
               <div className="col-sm-offset-3 col-sm-6">
-                <form ref={(ref) => this.form = ref} className="form">
+                <form ref={(ref) => this.form = ref} className="form" enctype="multipart/form-data">
                   <NonFieldErrors errors={auth.formErrors} />
                   <InputText
                     errors={auth.formErrors}
