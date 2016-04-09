@@ -13,7 +13,8 @@ import * as authActions from "../actions/authActions"
   auth: state.auth,
 }))
 export default class LoginView extends React.Component {
-  handleClick() {
+  handleSubmit(e) {
+    e.preventDefault();
     let formData = new FormData(this.form)
     this.props.dispatch(authActions.postLogin(formData))
   }
@@ -30,6 +31,7 @@ export default class LoginView extends React.Component {
                   className="form"
                   encType="multipart/form-data"
                   ref={(ref) => this.form = ref}
+                  onSubmit={(e) => this.handleSubmit(e)}
                 >
                   <NonFieldErrors errors={auth.formErrors} />
                   <InputText
@@ -45,7 +47,7 @@ export default class LoginView extends React.Component {
                   />
                   <Button
                     isLoading={auth.isPostingLogin}
-                    onClick={() => this.handleClick()}
+                    onClick={(e) => this.handleSubmit(e)}
                   >
                     Login
                   </Button>

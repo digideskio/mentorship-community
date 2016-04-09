@@ -2,15 +2,13 @@ import React from "react"
 
 
 export default class Button extends React.Component {
-  handleClick() {
+  handleClick(e) {
     let { isLoading, onClick } = this.props
-    if (isLoading === false || isLoading === undefined) {
-      onClick()
-    }
+    if (isLoading === false || isLoading === undefined) { onClick(e) }
   }
 
   render() {
-    let { isLoading, isSmall, onClick, pullRight } = this.props
+    let { isLoading, isSmall, pullRight } = this.props
     let className = "btn btn-primary"
     if (isSmall) { className += " btn-xs" }
 
@@ -22,12 +20,12 @@ export default class Button extends React.Component {
     }
     if (pullRight) { className += " pull-right"}
     return (
-      <div
+      <input
         className={className}
-        onClick={() => this.handleClick()}
-      >
-        {display}
-      </div>
+        onClick={(e) => this.handleClick(e)}
+        type="submit"
+        value={display}
+      />
     )
   }
 }

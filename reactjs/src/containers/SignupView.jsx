@@ -13,7 +13,8 @@ import * as authActions from "../actions/authActions"
   auth: state.auth,
 }))
 export default class SignupView extends React.Component {
-  handleClick() {
+  handleSubmit(e) {
+    e.preventDefault();
     let formData = new FormData(this.form)
     this.props.dispatch(authActions.postSignup(formData))
   }
@@ -30,6 +31,7 @@ export default class SignupView extends React.Component {
                   ref={(ref) => this.form = ref}
                   className="form"
                   encType="multipart/form-data"
+                  onSubmit={(e) => this.handleSubmit(e)}
                 >
                   <NonFieldErrors errors={auth.formErrors} />
                   <InputText
@@ -46,15 +48,17 @@ export default class SignupView extends React.Component {
                     errors={auth.formErrors}
                     name="password1"
                     placeholder="Password"
+                    type="password"
                   />
                   <InputText
                     errors={auth.formErrors}
                     name="password2"
                     placeholder="Repeat Password"
+                    type="password"
                   />
                   <Button
                     isLoading={auth.isPostingSignup}
-                    onClick={() => this.handleClick()}
+                    onClick={(e) => this.handleSubmit(e)}
                   >
                     Signup
                   </Button>
