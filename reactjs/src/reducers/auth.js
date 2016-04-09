@@ -4,6 +4,7 @@ import * as requestActions from "../actions/requestActions"
 
 const initialState = {
   formErrors: null,
+  isPostingLogin: false,
   isPostingSignup: false,
   key: null,
 }

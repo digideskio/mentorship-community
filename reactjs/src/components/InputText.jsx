@@ -16,21 +16,26 @@ export default class ImportText extends React.Component {
     inline: React.PropTypes.bool,
     name: React.PropTypes.string.isRequired,
     placeholder: React.PropTypes.string,
+    type: React.PropTypes.string,
   }
 
   render() {
-    let { errors, inline, name, placeholder } = this.props
+    let { errors, inline, name, placeholder, type } = this.props
     let errorsDisplay
-    if (errors && errors[name]) {
-      errorsDisplay = errors[name][0]
-    }
+    if (errors && errors[name]) { errorsDisplay = errors[name][0] }
+    if (type === undefined) { type = "text" }
     return (
       <div
         className="form-group"
         style={[
           inline && styles.inline
       ]}>
-        <input className="form-control" type="text" name={name} placeholder={placeholder} />
+        <input
+          className="form-control"
+          type={type}
+          name={name}
+          placeholder={placeholder}
+        />
         {errorsDisplay &&
           <span>{errorsDisplay}</span>
         }
