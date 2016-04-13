@@ -12,6 +12,9 @@ const styles = {
   marginTop: {
     marginTop: "2em",
   },
+  marginBottom: {
+    marginBottom: "0.5em",
+  },
   icon: {
     fontSize: "30px",
   }
@@ -23,11 +26,15 @@ export default class IndexView extends React.Component {
     return (
       <div>
         <Jumbotron>
-          <h1>We help you on your journey into software development</h1>
+          <h1 style={styles.marginBottom}>We help you on your journey into software development</h1>
+          <Button isBig={true} linkTo="/signup">Sign Me Up!</Button>
         </Jumbotron>
         <div className="row">
           <div className="col-sm-offset-1 col-sm-10">
             <div className="lead text-center">The best way to learn programming is at home and at your own pace. However, self-teaching such a complex topic can be daunting. Our goal is to structure your lessons, give you access to friendly mentors and introduce you to the broader communities.</div>
+            <div className="text-center">
+              <Button isBig={true} linkTo="/signup">Great, Sign Me Up!</Button>
+            </div>
           </div>
         </div>
         <hr />
@@ -85,6 +92,10 @@ export default class IndexView extends React.Component {
             </div>
           </div>
         </div>
+        <div className="text-center">
+          <Button isBig={true} linkTo="/signup">Awesome, Sign Me Up!</Button>
+        </div>
+        <hr />
       </div>
     )
   }
