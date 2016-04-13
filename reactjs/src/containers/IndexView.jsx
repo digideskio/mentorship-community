@@ -2,6 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 
 import Button from "../components/Button"
+import Footer from "../components/Footer"
 import Jumbotron from "../components/Jumbotron"
 import Skill from "../components/Skill"
 import Panel from "../components/Panel"
@@ -96,6 +97,7 @@ export default class IndexView extends React.Component {
           <Button isBig={true} linkTo="/signup">Awesome, Sign Me Up!</Button>
         </div>
         <hr />
+        <Footer />
       </div>
     )
   }
