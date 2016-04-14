@@ -7,10 +7,12 @@ import Navbar from "../components/Navbar"
 export default class AppContainer extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div>
         <Navbar />
-        {this.props.children}
-        <div style={{height: "100px"}} />
+        <div className="container">
+          {this.props.children}
+          <div style={{height: "100px"}} />
+        </div>
       </div>
     )
   }
