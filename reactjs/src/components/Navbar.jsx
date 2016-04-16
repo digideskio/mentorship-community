@@ -1,13 +1,17 @@
 import React from "react"
 import Radium from "radium"
 import { Link } from "react-router"
+import Button from "./Button"
 
 const styles = {
   navbar: {
+    fontFamily: "'Open Sans', Arial, sans-serif",
     borderRight: "none",
     borderLeft: "none",
     borderTop: "none",
     backgroundColor: "white",
+    paddingTop: "5px",
+    paddingBottom: "5px",
   }
 }
 
@@ -36,7 +40,9 @@ export default class Navbar extends React.Component {
             id="bs-example-navbar-collapse-1"
           >
             <ul className="nav navbar-nav navbar-right">
-              <li ><Link to="/signup">Signup</Link></li>
+              <li>
+                <Button linkTo="/signup" isLink={true}>Sign Up</Button>
+              </li>
             </ul>
           </div>
         </div>

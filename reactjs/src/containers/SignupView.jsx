@@ -58,9 +58,10 @@ export default class SignupView extends React.Component {
                   />
                   <Button
                     isLoading={auth.isPostingSignup}
+                    isInput={true}
                     onClick={(e) => this.handleSubmit(e)}
                   >
-                    Signup
+                    Sign Up
                   </Button>
                 </form>
               </div>
