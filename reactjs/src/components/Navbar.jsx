@@ -12,6 +12,7 @@ const styles = {
     backgroundColor: "white",
     paddingTop: "5px",
     paddingBottom: "5px",
+    marginBottom: "0px",
   }
 }
 
