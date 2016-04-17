@@ -15,6 +15,16 @@ const styles = {
     ":hover": {
       backgroundColor: "#4e92df",
     }
+  },
+  isInNavbar: {
+    "@media (max-width: 767px)": {
+      color: "#757575",
+      backgroundColor: "inherit",
+      ":hover": {
+        color: "#585858",
+        backgroundColor: "inherit",
+      }
+    }
   }
 }
 
@@ -41,6 +51,7 @@ export default class Button extends React.Component {
   render() {
     let {
       isBig,
+      isInNavbar,
       isInput,
       isLoading,
       isSmall,
@@ -66,7 +77,10 @@ export default class Button extends React.Component {
         <Link to={linkTo} style={{padding: "0px"}}>
           <div
             className={className}
-            style={[styles.base]}
+            style={[
+              styles.base,
+              isInNavbar && styles.isInNavbar,
+            ]}
           >
             {display}
           </div>

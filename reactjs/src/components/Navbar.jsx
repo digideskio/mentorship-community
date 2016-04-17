@@ -41,7 +41,13 @@ export default class Navbar extends React.Component {
           >
             <ul className="nav navbar-nav navbar-right">
               <li>
-                <Button linkTo="/signup" isLink={true}>Sign Up</Button>
+                <Button
+                  linkTo="/signup"
+                  isLink={true}
+                  isInNavbar={true}
+                >
+                  Sign Up
+                </Button>
               </li>
             </ul>
           </div>
