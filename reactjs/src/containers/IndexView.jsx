@@ -63,16 +63,21 @@ export default class IndexView extends React.Component {
           </h1>
           <Button isBig={true} linkTo="/signup">Sign Me Up!</Button>
         </div>
-        <div className="container" style={[{marginTop: "1em"}]}>
+        <div className="container" style={[{marginTop: "2em"}]}>
           <div className="row">
             <div className="col-sm-offset-1 col-sm-10">
-              <div className="lead text-center">The best way to learn programming is at home and at your own pace. However, self-teaching such a complex topic can be daunting. Our goal is to structure your lessons, give you access to friendly mentors and introduce you to the broader communities.</div>
+              <div className="lead text-center">
+                <p>The best way to learn programming is at home and at your own pace.</p>
+                <p>However, self-teaching such a complex topic can be daunting. We are here to structure your lessons, give you access to friendly mentors and introduce you to the broader communities.</p>
+              </div>
               <div className="text-center">
                 <Button isBig={true} linkTo="/signup">Great, Sign Me Up!</Button>
               </div>
             </div>
           </div>
-          <hr />
+          <hr style={[{marginTop: "2em"}]} />
+        </div>
+        <div className="container" style={[{marginTop: "2em"}]}>
           <h1 className="text-center">How It Works</h1>
           <div className="row" style={styles.marginTop}>
             <div className="col-sm-3">
