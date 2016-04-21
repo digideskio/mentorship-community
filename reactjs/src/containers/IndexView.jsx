@@ -54,7 +54,13 @@ const styles = {
   },
   howItWorks: {
     backgroundColor: "#4d6779",
-  }
+  },
+  rowEqHeight: {
+    display: "flex",
+    "@media (max-width: 767px)": {
+      display: "inherit",
+    },
+  },
 }
 
 
@@ -97,11 +103,12 @@ export default class IndexView extends React.Component {
         </div>
         <div
           className="container"
+          style={[{marginTop: "3em",}]}
         >
-          <div className="row">
+          <div className="row" style={[styles.rowEqHeight]}>
             <div
               className="col-sm-6"
-              style={[styles.howItWorks, {marginTop: "3em", padding: "1em 2em"}]}
+              style={[styles.howItWorks, {padding: "1em 2em"}]}
             >
               <TextTitle
                 isInverted={true}
@@ -110,10 +117,19 @@ export default class IndexView extends React.Component {
               </TextTitle>
               <TextContent isInverted={true}>
                 Our app is designed to structure your lessons into easy to
-                digest portions. You teach yourself at home, but once you have
-                gathered enough knowledge, you will meet a friendly mentor
-                and discuss what you have learned. Rince and repeat.
+                digest portions. You teach yourself at home at your own pace
+                and at the end of each lesson you can test yourself. Once you
+                have solved enough lessons, you can meet a friendly mentor
+                and discuss what you have learned. Rince and repeat. The app
+                shows you where you are in your learning journey and what still
+                lies ahead of you.
               </TextContent>
+            </div>
+            <div
+              className="col-sm-6"
+              style={[{padding: "1em 2em"}]}
+            >
+              asd<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />asdp<br /><br /><br /><br /><br /><br /><br /><br />asd
             </div>
           </div>
           <div className="row" style={styles.marginTop}>
