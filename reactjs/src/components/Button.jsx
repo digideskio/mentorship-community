@@ -16,6 +16,9 @@ const styles = {
       backgroundColor: "#4e92df",
     }
   },
+  isRed: {
+    backgroundColor: "red",
+  },
   isInNavbar: {
     "@media (max-width: 767px)": {
       color: "#757575",
@@ -50,6 +53,7 @@ export default class Button extends React.Component {
 
   render() {
     let {
+      isRed,
       isBig,
       isInNavbar,
       isInput,
@@ -91,7 +95,10 @@ export default class Button extends React.Component {
         <div
           className={className}
           onClick={(e) => this.handleClick(e)}
-          style={[styles.base]}
+          style={[
+            styles.base,
+            isRed && styles.isRed,
+          ]}
         >
           {display}
         </div>

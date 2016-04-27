@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 
 import * as theme from "../theme"
 import Button from "../components/Button"
+import FeatureDescription from "../components/FeatureDescription"
 import Footer from "../components/Footer"
 import InputText from "../components/InputText"
 import Jumbotron from "../components/Jumbotron"
@@ -76,7 +77,7 @@ export default class IndexView extends React.Component {
               Meet mentors and join the community!
             </small>
           </h1>
-          <Button isBig={true} linkTo="/signup">Sign Me Up!</Button>
+          <Button isRed={true} isBig={true} linkTo="/signup">Sign Me Up!</Button>
         </div>
         <div className="container" style={[{marginTop: "3em"}]}>
           <div className="row">
@@ -129,63 +130,28 @@ export default class IndexView extends React.Component {
               className="col-sm-6"
               style={[{padding: "1em 2em"}]}
             >
-              asd<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />asdp<br /><br /><br /><br /><br /><br /><br /><br />asd
+              <FeatureDescription step="1" title="Pick a skill">
+                Select one of the available skills that you want to learn.
+                Some skills are so complex, they are based on several other
+                prerequisites. We show you how it is all related to each other.
+              </FeatureDescription>
+
+              <FeatureDescription step="2" title="Learn at home">
+                We break down each skill into very small tasks and tell you
+                what you need to learn. You can take your time and learn at
+                your own pace. When you think you are ready, you can do a
+                little test.
+              </FeatureDescription>
+
+              <FeatureDescription step="3" title="Meet your mentor">
+                Once you have learned a few modules, you will meet your mentor
+                in a small group and discuss the topics you have learned.
+                This will make sure that you got it all right and that you meet
+                interesting people in the community.
+              </FeatureDescription>
             </div>
           </div>
-          <div className="row" style={styles.marginTop}>
-            <div className="col-sm-3">
-              <div className="text-center">
-                <div className="glyphicon glyphicon-user" style={styles.icon}></div>
-                <h2 className="text-center">Sign up</h2>
-                <p>Simply come up with a username and sign up for an account.</p>
-              </div>
-            </div>
-            <div className="col-sm-3">
-              <div className="text-center">
-                <div
-                  className="glyphicon glyphicon-screenshot"
-                  style={styles.icon}
-                />
-                <h2 className="text-center">Pick a Skill</h2>
-                <p>
-                  Select one of the available skills that you want to learn.
-                  Some skills are so complex, they are based on several other
-                  sub-skills. We show you nicely how it is all related to each
-                  other.
-                </p>
-              </div>
-            </div>
-            <div className="col-sm-3">
-              <div className="text-center">
-                <div
-                  className="glyphicon glyphicon-book"
-                  style={styles.icon}
-                />
-                <h2 className="text-center">Teach Yourself</h2>
-                <p>
-                  We break down each skill into very small tasks and tell you
-                  what you need to learn. You take your time and when you think
-                  you are ready, you do a little test.
-                </p>
-              </div>
-            </div>
-            <div className="col-sm-3">
-              <div className="text-center">
-                <div
-                  className="glyphicon glyphicon-map-marker"
-                  style={styles.icon}
-                />
-                <h2 className="text-center">Meet Your Mentor</h2>
-                <p>
-                  Once you have learned a few modules, you will meet your mentor
-                  in a small group and discuss the topics you have learned. This
-                  will make sure that you got it all right and that you meet
-                  interesting people in the community.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="text-center">
+          <div className="text-center" style={[{marginTop: "2em"}]}>
             <Button isBig={true} linkTo="/signup">Awesome, Sign Me Up!</Button>
           </div>
           <hr />
