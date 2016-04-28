@@ -1,0 +1,17 @@
+---
+- name: common-python - update pip
+  remote_user: root
+  sudo: yes
+  raw: pip install pip --upgrade
+
+- name: common-python - update distutils
+  remote_user: root
+  sudo: yes
+  raw: pip install distribute --upgrade
+
+- name: common-python - install global packages
+  remote_user: root
+  pip: name={{ item.name }}
+  with_items:
+    - { name: ipython }
+    - { name: python-memcached }

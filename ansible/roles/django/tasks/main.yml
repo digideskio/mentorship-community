@@ -1,0 +1,37 @@
+---
+- name: django - create folders
+  shell: mkdir -p {{ item }}
+  with_items:
+    - ~/backups
+    - ~/etc
+    - ~/log
+    - ~/project
+    - ~/project_assets/media
+    - ~/project_assets/static
+    - ~/src
+
+- name: django - clean up prior attempts
+  shell:  rm -rf ~/src/{{ django_project_name }}
+
+- name: django - clone project to src
+  shell: git clone {{ git_repo }} {{ django_project_name }}
+  args:
+    chdir: ~/src
+
+- name: django - update submodules
+  shell: git submodule init && git submodule update
+  args:
+    chdir: "{{ server_git_repo }}"
+
+- name: django - create project venv
+  shell: source ~/.bash_profile && mkvirtualenv {{ venv_name }}
+  args:
+    executable: /bin/bash
+
+- name: django - install project venv
+  shell: source ~/.bash_profile && workon {{ venv_name }} && pip install -r {{ server_requirements_txt }}
+  args:
+    executable: /bin/bash
+
+- name: django - rsync cloned repo into destination
+  shell: rsync -avz --stats --delete {{ server_git_project_root }}/ {{ server_project_folder }}

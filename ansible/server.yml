@@ -1,0 +1,16 @@
+---
+- name: Main task
+  hosts: ubuntu-server
+  vars_files:
+    - vars/external_vars.yml
+  user: django
+
+  roles:
+    - { role: common, tags: [ 'common' ] }
+    - { role: common-python, tags: [ 'common-python' ] }
+    - { role: virtualenv, tags: [ 'virtualenv' ] }
+    - { role: postgres, tags: [ 'postgres' ] }
+    - { role: django, tags: [ 'django' ] }
+    - { role: nginx, tags: [ 'nginx' ] }
+    - { role: uwsgi, tags: [ 'uwsgi' ] }
+    - { role: supervisor, tags: [ 'supervisor' ] }
