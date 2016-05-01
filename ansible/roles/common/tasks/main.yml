@@ -9,6 +9,7 @@
     - git-core
     - libsqlite3-dev
     - libssl-dev
+    - libffi-dev
     - make
     - mercurial
     - python-dev
