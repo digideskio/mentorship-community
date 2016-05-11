@@ -15,7 +15,7 @@ config.entry = {
   ],
 }
 
-config.output.publicPath = 'http://' + ip + ':3000' + '/assets/bundles/'
+config.output.publicPath = 'http://' + ip + ':3000' + '/assets/webpack_bundles/'
 
 config.plugins = config.plugins.concat([
   new webpack.HotModuleReplacementPlugin(),

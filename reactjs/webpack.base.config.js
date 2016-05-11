@@ -11,7 +11,7 @@ module.exports = {
   },
 
   output: {
-      path: path.resolve('../django/mentorship_community/static/bundles/'),
+      path: path.resolve('../django/mentorship_community/static/webpack_bundles/'),
       filename: "[name]-[hash].js"
   },
 
