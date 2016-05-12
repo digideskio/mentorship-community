@@ -10,7 +10,7 @@ config.plugins = config.plugins.concat([
   new webpack.DefinePlugin({
     'process.env': {
       'NODE_ENV': JSON.stringify('production'),
-      'BASE_API_URL': JSON.stringify('https://'+ip+'/api/v1/'),
+      'BASE_API_URL': JSON.stringify('http://'+ip+'/api/'),
   }}),
   // keeps hashes consistent between compilations
   new webpack.optimize.OccurenceOrderPlugin(),
