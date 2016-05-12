@@ -1,6 +1,7 @@
 Django==1.9.3
 Fabric==1.10.2
 django-allauth==0.25.2
+django-cors-headers==1.1.0
 django-mailgun==0.8.0
 django-rest-auth==0.7.0
 django-webpack-loader==0.2.4
