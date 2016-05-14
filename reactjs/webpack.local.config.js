@@ -20,7 +20,7 @@ config.output.publicPath = 'http://' + ip + ':3000' + '/assets/webpack_bundles/'
 config.plugins = config.plugins.concat([
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoErrorsPlugin(),
-  new BundleTracker({filename: '../django/webpack-stats.json'}),
+  new BundleTracker({filename: '../django/webpack-stats-local.json'}),
   new webpack.DefinePlugin({
     'process.env': {
       'NODE_ENV': JSON.stringify('development'),

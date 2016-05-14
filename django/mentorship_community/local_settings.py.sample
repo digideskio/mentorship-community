@@ -1,2 +1,14 @@
+import os
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_ROOT = '/Users/USERNAME/Projects/mentorship-community/project_assets/static'  # NOQA
 MEDIA_ROOT = '/Users/USERNAME/Projects/mentorship-community/project_assets/media'  # NOQA
+EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
+MAILGUN_ACCESS_KEY = ''
+MAILGUN_SERVER_NAME = ''
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats-local.json')
+    }
+}
