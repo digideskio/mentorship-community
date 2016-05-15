@@ -40,12 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.staticfiles',
-    'allauth.account',
     'allauth',
+    'allauth.account',
     'corsheaders',
     'custom_auth',
-    'rest_auth.registration',
     'rest_auth',
+    'rest_auth.registration',
     'rest_framework.authtoken',
     'rest_framework',
     'webpack_loader',
@@ -137,6 +137,16 @@ STATICFILES_DIRS = (
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+       'rest_framework.permissions.AllowAny',
+    )
+}
 
 try:
     from .local_settings import *  # NOQA
