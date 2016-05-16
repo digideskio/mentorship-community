@@ -5,7 +5,6 @@ import { connect } from "react-redux"
 import * as theme from "../theme"
 import Button from "../components/Button"
 import FeatureDescription from "../components/FeatureDescription"
-import Footer from "../components/Footer"
 import InputText from "../components/InputText"
 import Jumbotron from "../components/Jumbotron"
 import Panel from "../components/Panel"
@@ -154,8 +153,6 @@ export default class IndexView extends React.Component {
           <div className="text-center" style={[{marginTop: "2em"}]}>
             <Button isBig={true} linkTo="/signup">Awesome, Sign Me Up!</Button>
           </div>
-          <hr />
-          <Footer />
         </div>
       </div>
     )

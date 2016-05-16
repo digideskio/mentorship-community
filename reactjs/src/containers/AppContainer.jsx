@@ -2,6 +2,7 @@ import React from "react"
 import { StyleRoot } from "radium";
 import { Link } from "react-router"
 
+import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 
 export default class AppContainer extends React.Component {
@@ -10,7 +11,7 @@ export default class AppContainer extends React.Component {
       <StyleRoot>
         <Navbar />
         {this.props.children}
-        <div style={{height: "100px"}} />
+        <Footer />
       </StyleRoot>
     )
   }
