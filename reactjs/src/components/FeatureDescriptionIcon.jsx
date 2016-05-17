@@ -18,11 +18,17 @@ const styles = {
     width: "85%",
     height: "85%",
     borderRadius: "50%",
-    backgroundColor: "#dfdfdf",
+    border: `4px solid #83b3dc`,
+    backgroundColor: "#337ab7",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-  }
+  },
+  step: {
+    fontFamily: theme.FONT_FAMILY_SERIF,
+    color: "white",
+    fontWeight: "bold",
+  },
 }
 
 
@@ -38,7 +44,7 @@ export default class FeatureDescriptionIcon extends React.Component {
     return (
       <div style={[styles.base]}>
         <div style={[styles.innerCircle]}>
-          {step}
+          <div style={[styles.step]}>{step}</div>
         </div>
       </div>
     )
