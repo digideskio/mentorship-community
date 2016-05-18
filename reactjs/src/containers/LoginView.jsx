@@ -7,6 +7,7 @@ import NonFieldErrors from "../components/NonFieldErrors"
 import Panel from "../components/Panel"
 
 import * as authActions from "../actions/authActions"
+import * as theme from "../theme"
 
 
 @connect(state => ({
@@ -22,7 +23,7 @@ export default class LoginView extends React.Component {
   render() {
     let { auth } = this.props
     return (
-      <div className="row">
+      <div className="row" style={{marginTop: theme.MARGIN_TOP_CONTAINER}}>
         <div className="col-sm-offset-3 col-sm-6">
           <Panel heading="Login">
             <div className="row">
