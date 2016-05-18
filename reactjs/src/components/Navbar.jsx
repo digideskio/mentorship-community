@@ -41,6 +41,7 @@ export default class Navbar extends React.Component {
             id="bs-example-navbar-collapse-1"
           >
             <ul className="nav navbar-nav navbar-right">
+              <li><Link to="/login">Login</Link></li>
               <li>
                 <Button
                   linkTo="/signup"
