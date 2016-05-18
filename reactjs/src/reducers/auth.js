@@ -12,6 +12,9 @@ const initialState = {
 
 export default function reducer(state=initialState, action={}) {
   switch (action.type) {
+  case authActions.PERFORM_LOGOUT:
+    window.localStorage.removeItem("token")
+    return {...state, key: undefined}
   case authActions.POST_LOGIN:
     return {...state, isPostingLogin: true}
   case authActions.POST_SIGNUP:

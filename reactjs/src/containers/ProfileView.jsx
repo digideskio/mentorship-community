@@ -1,6 +1,8 @@
 import React from "react"
-import { Link } from "react-router"
+import { connect } from "react-redux"
+import { browserHistory, Link } from "react-router"
 
+import * as authActions from "../actions/authActions"
 import Avatar from "../components/Avatar"
 import Button from "../components/Button"
 import InputText from "../components/InputText"
@@ -9,7 +11,13 @@ import Panel from "../components/Panel"
 import ProgressBox from "../components/ProgressBox"
 
 
+@connect(state => ({}))
 export default class ProfileView extends React.Component {
+  handleLogout() {
+    this.props.dispatch(authActions.performLogout())
+    browserHistory.push('/')
+  }
+
   render() {
     return (
       <div>
@@ -29,6 +37,7 @@ export default class ProfileView extends React.Component {
                   <InputText name="facebook_user" placeholder="Facebook User" />
                   <InputText name="password" placeholder="Password" />
                   <Button>Save</Button>
+                  <Button onClick={() => this.handleLogout()}>Logout</Button>
                 </form>
               </Panel>
             </div>

@@ -39,6 +39,7 @@ export default class Button extends React.Component {
     isLoading: React.PropTypes.bool,
     isSmall: React.PropTypes.bool,
     linkTo: React.PropTypes.string,
+    onClick: React.PropTypes.func,
     pullRight: React.PropTypes.bool,
   }
 
