@@ -2,6 +2,19 @@ import { request } from "./utils"
 import * as requestActions from "./requestActions"
 
 
+export const SET_LOCAL_TOKEN = "SET_LOCAL_TOKEN"
+export const REMOVE_LOCAL_TOKEN = "REMOVE_LOCAL_TOKEN"
+export function setLocalToken() {
+  return function(dispatch) {
+    if (localStorage.token) {
+      dispatch({type: SET_LOCAL_TOKEN, token: localStorage.token})
+    } else {
+      dispatch({type: REMOVE_LOCAL_TOKEN})
+    }
+  }
+}
+
+
 export const POST_LOGIN = "POST_LOGIN"
 export const POST_LOGIN_SUCCESS = "POST_LOGIN_SUCCESS"
 export function postLogin(formData) {
