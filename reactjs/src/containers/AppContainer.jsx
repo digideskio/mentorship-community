@@ -8,16 +8,20 @@ import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 
 
-@connect(state => ({}))
+@connect(state => ({
+  auth: state.auth
+}))
 export default class AppContainer extends React.Component {
   componentDidMount() {
     this.props.dispatch(authActions.setLocalToken())
   }
 
   render() {
+    let { auth } = this.props
+
     return (
       <StyleRoot>
-        <Navbar />
+        <Navbar auth={auth} />
         {this.props.children}
         <Footer />
       </StyleRoot>

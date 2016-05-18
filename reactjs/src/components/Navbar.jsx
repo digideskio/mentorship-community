@@ -19,7 +19,12 @@ const styles = {
 
 @Radium
 export default class Navbar extends React.Component {
+  static propTypes = {
+    auth: React.PropTypes.object.isRequired,
+  }
+
   render() {
+    let { auth } = this.props
     return (
       <nav
         className="navbar navbar-default"
@@ -41,16 +46,23 @@ export default class Navbar extends React.Component {
             id="bs-example-navbar-collapse-1"
           >
             <ul className="nav navbar-nav navbar-right">
-              <li><Link to="/login">Login</Link></li>
-              <li>
-                <Button
-                  linkTo="/signup"
-                  isLink={true}
-                  isInNavbar={true}
-                >
-                  Sign Up
-                </Button>
-              </li>
+              {auth.key &&
+                <li><Link to="/profile">Profile</Link></li>
+              }
+              {!auth.key &&
+                <li><Link to="/login">Login</Link></li>
+              }
+              {!auth.key &&
+                <li>
+                  <Button
+                    linkTo="/signup"
+                    isLink={true}
+                    isInNavbar={true}
+                  >
+                    Sign Up
+                  </Button>
+                </li>
+              }
             </ul>
           </div>
         </div>
