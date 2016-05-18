@@ -1,5 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
+import { browserHistory } from "react-router"
 
 import Button from "../components/Button"
 import InputText from "../components/InputText"
@@ -14,10 +15,15 @@ import * as theme from "../theme"
   auth: state.auth,
 }))
 export default class SignupView extends React.Component {
+  handleSignupSuccess() {
+    browserHistory.push('/profile/')
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     let formData = new FormData(this.form)
-    this.props.dispatch(authActions.postSignup(formData))
+    this.props.dispatch(authActions.postSignup(
+      formData, () => this.handleSignupSuccess()))
   }
 
   render() {

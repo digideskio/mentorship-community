@@ -10,13 +10,16 @@ export function performLogout() {
 
 export const POST_LOGIN = "POST_LOGIN"
 export const POST_LOGIN_SUCCESS = "POST_LOGIN_SUCCESS"
-export function postLogin(formData) {
+export function postLogin(formData, successCallback) {
   return function(dispatch) {
     dispatch({type: POST_LOGIN})
     request(
       "rest-auth/login/",
       {method: "post", body: formData},
-      (json) => { dispatch({type: POST_LOGIN_SUCCESS, res: json}) },
+      (json) => {
+        dispatch({type: POST_LOGIN_SUCCESS, res: json})
+        successCallback()
+      },
       (json) => { dispatch(requestActions.error400(json)) },
       (res) => { dispatch(requestActions.errorResponse(res)) },
       (ex) => { dispatch(requestActions.errorNetwork(ex)) },
@@ -27,13 +30,16 @@ export function postLogin(formData) {
 
 export const POST_SIGNUP = "POST_SIGNUP"
 export const POST_SIGNUP_SUCCESS = "POST_SIGNUP_SUCCESS"
-export function postSignup(formData) {
+export function postSignup(formData, successCallback) {
   return function(dispatch) {
     dispatch({type: POST_SIGNUP})
     request(
       "rest-auth/registration/",
       {method: "post", body: formData},
-      (json) => { dispatch({type: POST_SIGNUP_SUCCESS, res: json}) },
+      (json) => {
+        dispatch({type: POST_SIGNUP_SUCCESS, res: json})
+        successCallback()
+      },
       (json) => { dispatch(requestActions.error400(json)) },
       (res) => { dispatch(requestActions.errorResponse(res)) },
       (ex) => { dispatch(requestActions.errorNetwork(ex)) },
