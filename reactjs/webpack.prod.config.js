@@ -2,7 +2,7 @@ var path = require("path")
 var webpack = require('webpack')
 var BundleTracker = require('webpack-bundle-tracker')
 
-var ip = '188.166.208.127'
+var ip = 'techmentors.sg'
 var config = require('./webpack.base.config.js')
 
 config.plugins = config.plugins.concat([
@@ -10,7 +10,7 @@ config.plugins = config.plugins.concat([
   new webpack.DefinePlugin({
     'process.env': {
       'NODE_ENV': JSON.stringify('production'),
-      'BASE_API_URL': JSON.stringify('http://'+ip+'/api/'),
+      'BASE_API_URL': JSON.stringify('https://'+ip+'/api/'),
   }}),
   // keeps hashes consistent between compilations
   new webpack.optimize.OccurenceOrderPlugin(),
