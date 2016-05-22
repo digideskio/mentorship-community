@@ -10,7 +10,6 @@ import {
 } from "redux"
 import { Provider } from "react-redux"
 import thunk from "redux-thunk"
-import { createHistory } from 'history'
 
 import * as reducers from "./reducers"
 import AppContainer from "./containers/AppContainer"
