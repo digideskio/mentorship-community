@@ -49,6 +49,10 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_framework',
     'webpack_loader',
+
+    'user_profiles',
+    'skills',
+    'exams',
 ]
 
 MIDDLEWARE_CLASSES = [
