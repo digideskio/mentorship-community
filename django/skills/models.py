@@ -5,7 +5,7 @@ from django.db import models
 
 class Skill(models.Model):
     # name
-    prerequisites = models.ManyToManyRel('skills.Skill')
+    prerequisites = models.ManyToManyField('skills.Skill')
     users = models.ManyToManyField('auth.User', related_name='modules')
 
 
