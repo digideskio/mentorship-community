@@ -17,7 +17,7 @@ class Question(models.Model):
     exam = models.ForeignKey('exams.Exam', related_name='questions')
     question_type = models.CharField(
         choices=QUESTION_TYPES,
-        max_length=255
+        max_length=128
     )
 
 
