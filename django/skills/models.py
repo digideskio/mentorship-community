@@ -7,7 +7,6 @@ class Skill(models.Model):
     prerequisites = models.ManyToManyField('skills.Skill')
     users = models.ManyToManyField('auth.User', related_name='modules')
     name = models.TextField(
-        max_length=512,
         help_text='Skill Name'
     )
 
