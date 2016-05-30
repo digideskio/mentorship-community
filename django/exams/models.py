@@ -22,12 +22,17 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
+    """
+    Answer choices for a question.
+
+    One question can have many TRUE answers or FALSE answers. You can add
+    multiple answers for one question.
+
+    is_correct: If `True`, this answer is deemed correct.
+    If `False`, this answer is deemed incorrect.
+    """
     question = models.ForeignKey('exams.Question', related_name='answers')
-    """
-    This answer may be correct or incorrect for the related question
-    """
     value = models.TextField(
-        max_length=1024,
         help_text='Answer text'
     )
     is_correct = models.BooleanField(
