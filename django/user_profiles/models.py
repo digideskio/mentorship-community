@@ -26,7 +26,6 @@ class UserProfile(models.Model):
         null=True,
         blank=True,
         upload_to='avatar/',
-        default='avatar/default.jpg',
     )
     facebook_url = models.URLField(
         max_length=255,
