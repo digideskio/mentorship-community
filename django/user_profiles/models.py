@@ -19,7 +19,8 @@ class UserProfile(models.Model):
         max_length=64,
     )
     birth_date = models.DateField(
-        blank=True
+        blank=True,
+        null=True
     )
     avatar = models.ImageField(
         null=True,
