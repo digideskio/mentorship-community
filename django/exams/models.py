@@ -44,8 +44,8 @@ class Answer(models.Model):
 
 
 class Results(models.Model):
-    exam = models.ForeignKey('exams.Exam', related_name='exams')
-    user = models.ForeignKey('auth.User', related_name='users')
+    exam = models.ForeignKey('exams.Exam', related_name='results')
+    user = models.ForeignKey('auth.User', related_name='results')
     is_passed = models.BooleanField(
         default=False
     )

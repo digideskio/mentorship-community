@@ -17,7 +17,7 @@ class Track(models.Model):
 
 class Module(models.Model):
     track = models.ForeignKey('skills.Track', related_name='modules')
-    users = models.ManyToManyField('auth.User', related_name='participants')
+    users = models.ManyToManyField('auth.User', related_name='modules')
     position = models.PositiveIntegerField()
     description = models.TextField(
         max_length=1024,
