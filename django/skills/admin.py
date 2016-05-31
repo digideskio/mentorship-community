@@ -9,6 +9,13 @@ class SkillAdmin(admin.ModelAdmin):
         'name', 'prerequisites', 'users'
     ]
     raw_id_fields = ['users', ]
+    list_display = [
+        'name', 'users_count'
+    ]
+
+    def users_count(self, obj):
+        return obj.users.count()
+    users_count.short_description = 'Users Enrolled'
 
 
 class ModuleInline(admin.StackedInline):
