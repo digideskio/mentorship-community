@@ -28,14 +28,17 @@ class UserProfile(models.Model):
         upload_to='avatar/',
     )
     facebook_url = models.URLField(
+        blank=True,
         max_length=255,
         help_text='Your Facebook Profile URL'
     )
     github_username = models.CharField(
+        blank=True,
         max_length=255,
         help_text='Your Github username'
     )
     twitter_username = models.CharField(
+        blank=True,
         max_length=255,
         help_text='Your Twitter username'
     )
