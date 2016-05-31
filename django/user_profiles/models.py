@@ -17,7 +17,6 @@ class UserProfile(models.Model):
     gender = models.CharField(
         choices=GENDER_TYPE_CHOICE,
         max_length=64,
-        blank=False
     )
     birth_date = models.DateField(
         blank=True
