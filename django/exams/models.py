@@ -19,6 +19,9 @@ class Question(models.Model):
         choices=QUESTION_TYPES,
         max_length=128
     )
+    question_text = models.TextField(
+        help_text="Question Label"
+    )
 
 
 class Answer(models.Model):
@@ -41,8 +44,8 @@ class Answer(models.Model):
 
 
 class Results(models.Model):
-    exam = models.ForeignKey('exams.Exam', related_name='results')
-    user = models.ForeignKey('auth.User', related_name='results')
+    exam = models.ForeignKey('exams.Exam', related_name='exams')
+    user = models.ForeignKey('auth.User', related_name='users')
     is_passed = models.BooleanField(
         default=False
     )
