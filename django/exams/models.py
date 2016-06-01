@@ -5,6 +5,11 @@ from django.db import models
 
 class Exam(models.Model):
     module = models.ForeignKey('skills.Module', related_name='exams')
+    title = models.CharField(
+        help_text='Exam Title',
+        max_length=512,
+        default='Untitled Exam',
+    )
 
 
 class Question(models.Model):
