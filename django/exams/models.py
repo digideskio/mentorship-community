@@ -5,6 +5,11 @@ from django.db import models
 
 class Exam(models.Model):
     module = models.ForeignKey('skills.Module', related_name='exams')
+    title = models.CharField(
+        help_text='Exam Title',
+        max_length=512,
+        default='Untitled Exam',
+    )
 
 
 class Question(models.Model):
@@ -15,17 +20,38 @@ class Question(models.Model):
     )
 
     exam = models.ForeignKey('exams.Exam', related_name='questions')
-    # question_type (CharField with choices)
+    question_type = models.CharField(
+        choices=QUESTION_TYPES,
+        max_length=128
+    )
+    question_text = models.TextField(
+        help_text="Question Label"
+    )
 
 
 class Answer(models.Model):
+    """
+    Answer choices for a question.
+
+    One question can have many TRUE answers or FALSE answers. You can add
+    multiple answers for one question.
+
+    is_correct: If `True`, this answer is deemed correct.
+    If `False`, this answer is deemed incorrect.
+    """
     question = models.ForeignKey('exams.Question', related_name='answers')
-    # value
-    # is_correct
+    value = models.TextField(
+        help_text='Answer text'
+    )
+    is_correct = models.BooleanField(
+        default=False
+    )
 
 
 class Results(models.Model):
     exam = models.ForeignKey('exams.Exam', related_name='results')
     user = models.ForeignKey('auth.User', related_name='results')
-    # is_passed (BooleanField)
-    # tries (PositiveIntegerField)
+    is_passed = models.BooleanField(
+        default=False
+    )
+    tries = models.PositiveIntegerField()
