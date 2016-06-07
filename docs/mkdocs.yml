@@ -3,6 +3,7 @@ pages:
 - Home: index.md
 - Contributing: contributing.md
 theme: readthedocs
+docs_dir: content
 repo_url: https://github.com/mbrochh/mentorship-community
 markdown_extensions:
   - admonition
