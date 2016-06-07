@@ -2,3 +2,9 @@ site_name: Mentorship Community Documentation
 pages:
 - Home: index.md
 - Contributing: contributing.md
+theme: readthedocs
+repo_url: https://github.com/mbrochh/mentorship-community
+markdown_extensions:
+  - admonition
+  - smarty
+  - toc
