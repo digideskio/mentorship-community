@@ -15,6 +15,11 @@ cd ~/Projects/mentorship-community/src/reactjs
 npm install
 ```
 
+!!! note
+    If you get an `npm ERR! peerinvalid Peer babel-eslint@5.0.4 wants eslint@<2.3.0`
+    error message, run `npm install eslint@2.2.0`
+
+
 In order to start the development servers, try this:
 
 ```bash
